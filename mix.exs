@@ -23,11 +23,17 @@ defmodule EX.Mixfile do
   end
 
   def application() do
-    [mod: {:ex, []}]
+    [ mod: {:ex, []},
+      applications: [:ranch, :cowboy, :n2o, :tic, :fix, :trade]
+    ]
   end
 
   def deps() do
     [
+      {:n2o, ">= 0.0.0"},
+      {:tic, ">= 0.0.0"},
+      {:fix, ">= 0.0.0"},
+      {:trade, ">= 0.0.0"},
       {:ex_doc, "~> 0.11", only: :dev}
     ]
   end
